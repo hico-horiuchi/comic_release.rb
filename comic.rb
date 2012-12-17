@@ -6,6 +6,8 @@ require 'date'
 require 'kconv'
 
 class Comic
+  attr_reader :name, :num, :date, :flag
+
   # 初期化
   def initialize(name, num)
     @name = name        # タイトル
@@ -22,20 +24,4 @@ class Comic
     @date = getReleaseDate(@url)
   end
 
-  # データ取得メソッド
-  def getName
-    @name
-  end
-
-  def getNum
-    @num
-  end
-
-  def getDate
-    @date
-  end
-
-  def getFlag
-    @flag
-  end
 end

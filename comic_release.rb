@@ -10,14 +10,14 @@ require './comic_list.rb'
 CSV.foreach(ARGV[0]) { |raw|
   tmpComic = ComicList.new(raw[0], raw[1])
 
-  print(ljust_kana(tmpComic.getName, 25).tosjis)
+  print(ljust_kana(tmpComic.name, 25).tosjis)
 
-  printf("%02d", tmpComic.getNum)
+  printf("%02d", tmpComic.num)
   print("巻  ".tosjis)
 
-  flag = tmpComic.getFlag
+  flag = tmpComic.flag
   if flag == "release" then
-    print(tmpComic.getDate.strftime("%m/%d") + "\n")
+    print(tmpComic.date.strftime("%m/%d") + "\n")
   elsif flag == "undecide" then
     puts "未定".tosjis
   else
