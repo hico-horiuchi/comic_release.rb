@@ -8,6 +8,12 @@ require './comic.rb'
 
 class ComicList < Comic
 
+  def initialize(title, volume)
+    super(title, volume)
+    @url = encodeURL(@title, @volume)
+    @release_date = getReleaseDate(@url)
+  end
+
   # タイトルと巻数からURLを生成
   def encodeURL(name, num)
     # URLエンコード
