@@ -1,0 +1,15 @@
++-------------------------+      +--------------------+
+| Comic                   |      | ComicList          |
++-------------------------+<-----+--------------------+
+| o name; String          |      +--------------------+
+| o num; Integer          |      | o encodeURL()      |
+| o date; Date            |      | o getReleaseDate() |
+| o flag; String          |      +--------------------+
+| o url; String           |
++-------------------------+
+| o initialize(name, num) |
+| o getName()             |
+| o getNum()              |
+| o getDate()             |
+| o getFlag()             |
++-------------------------+
