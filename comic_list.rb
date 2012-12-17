@@ -7,10 +7,11 @@ require 'open-uri'
 require './comic.rb'
 
 class ComicList < Comic
+
   # タイトルと巻数からURLを生成
   def encodeURL(name, num)
     # URLエンコード
-    return 'http://comiclist.jp/index.php?p=s&mode=ss&keyword=' + CGI.escape(@name.toutf8) + '+' + @num.to_s
+    return 'http://comiclist.jp/index.php?p=s&mode=ss&keyword=' + CGI.escape(@title.toutf8) + '+' + @volume.to_s
   end
 
   # URLから発売日を取得

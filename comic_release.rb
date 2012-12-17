@@ -10,9 +10,9 @@ require './comic_list.rb'
 CSV.foreach(ARGV[0]) { |raw|
   tmpComic = ComicList.new(raw[0], raw[1])
 
-  print(ljust_kana(tmpComic.name, 25).tosjis)
+  print(ljust_kana(tmpComic.title, 25).tosjis)
 
-  printf("%02d", tmpComic.num)
+  printf("%02d", tmpComic.volume)
   print("巻  ".tosjis)
 
   flag = tmpComic.flag
