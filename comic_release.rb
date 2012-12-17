@@ -17,7 +17,7 @@ CSV.foreach(ARGV[0]) { |raw|
 
   flag = tmpComic.flag
   if flag == "release" then
-    print(tmpComic.date.strftime("%m/%d") + "\n")
+    print(tmpComic.release_date.strftime("%m/%d") + "\n")
   elsif flag == "undecide" then
     puts "未定".tosjis
   else
