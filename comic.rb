@@ -6,36 +6,18 @@ require 'date'
 require 'kconv'
 
 class Comic
+  attr_reader :title, :volume, :release_date, :is_release_decided
+
   # 初期化
-  def initialize(name, num)
-    @name = name        # タイトル
-    @num = num.to_i     # 巻数
-    @date = Date::today # 発売日
-    @flag = "undecide"  # 発売フラグ(release, undecide, error)
+  def initialize(title, volume)
+    @title = title
+    @volume = volume.to_i
+    @release_date
+    @is_release_decided = false # 発売フラグ(release, undecide, error)
 
-    # numが整数でない場合
-    if num == 0 then
-      @flag = "error"
+    # @volumeが整数でない場合
+    if @volume == 0 then
+      raise "volume が整数ではない"
     end
-
-    @url = encodeURL(@name, @num)
-    @date = getReleaseDate(@url)
-  end
-
-  # データ取得メソッド
-  def getName
-    @name
-  end
-
-  def getNum
-    @num
-  end
-
-  def getDate
-    @date
-  end
-
-  def getFlag
-    @flag
   end
 end

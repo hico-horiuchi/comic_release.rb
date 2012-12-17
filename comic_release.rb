@@ -7,20 +7,23 @@ require 'kconv'
 require './just_kana.rb'
 require './comic_list.rb'
 
+if ARGV.size < 1
+  puts "引数不足"
+  puts "usage: ruby ./comic_release.rb ./foo.csv"
+  exit
+end
+
 CSV.foreach(ARGV[0]) { |raw|
-  tmpComic = ComicList.new(raw[0], raw[1])
+  comic = ComicList.new(raw[0], raw[1])
 
-  print(ljust_kana(tmpComic.getName, 25).tosjis)
+  print(ljust_kana(comic.title, 25).tosjis)
 
-  printf("%02d", tmpComic.getNum)
+  printf("%02d", comic.volume)
   print("巻  ".tosjis)
 
-  flag = tmpComic.getFlag
-  if flag == "release" then
-    print(tmpComic.getDate.strftime("%m/%d") + "\n")
-  elsif flag == "undecide" then
-    puts "未定".tosjis
+  if comic.is_release_decided
+    print(comic.release_date.strftime("%m/%d") + "\n")
   else
-    puts "エラー".tosjis
+    puts "未定".tosjis
   end
 }
