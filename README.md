@@ -17,8 +17,8 @@ comic_release.rb
 
 クラス図
 --------
-![class.png](./class.png)
+![class.png](https://raw.github.com/hico-horiuchi/comic_release.rb/master/class.png)
 
 シーケンス図
 ------------
-![sequence.png](./sequence.png)
+![sequence.png](https://raw.github.com/hico-horiuchi/comic_release.rb/master/sequence.png)
