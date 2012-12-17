@@ -10,18 +10,18 @@ class ComicList < Comic
 
   def initialize(title, volume)
     super(title, volume)
-    @url = encodeURL(@title, @volume)
-    @release_date = getReleaseDate(@url)
+    @url = create_encode_url
+    @release_date = get_release_date(@url)
   end
 
   # タイトルと巻数からURLを生成
-  def encodeURL(name, num)
+  def create_encode_url
     # URLエンコード
     return 'http://comiclist.jp/index.php?p=s&mode=ss&keyword=' + CGI.escape(@title.toutf8) + '+' + @volume.to_s
   end
 
   # URLから発売日を取得
-  def getReleaseDate(url)
+  def get_release_date(url)
     releaseDate = Date::today
 
     # HTMLファイル取得
