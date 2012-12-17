@@ -12,7 +12,6 @@ class Comic
   def initialize(name, num)
     @name = name        # タイトル
     @num = num.to_i     # 巻数
-    @release_date = Date::today # 発売日
     @flag = "undecide"  # 発売フラグ(release, undecide, error)
 
     # numが整数でない場合
