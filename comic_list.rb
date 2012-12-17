@@ -21,7 +21,7 @@ class ComicList < Comic
     open (url) { |f|
       # 1行ずつ読み込み、正規表現で発売日を抽出
       f.read =~ /<td class="list-line list-day">(.*?)<\/td>/
-      if $1 != nil then # 発売日が決定の場合
+      if $1 then # 発売日が決定の場合
         releaseDate = Date.strptime($1, "%m/%d")
         @flag = "release"
       end
