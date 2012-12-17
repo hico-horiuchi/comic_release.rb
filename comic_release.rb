@@ -7,6 +7,12 @@ require 'kconv'
 require './just_kana.rb'
 require './comic_list.rb'
 
+if ARGV.size < 1
+  puts "引数不足"
+  puts "usage: ruby ./comic_release.rb ./foo.csv"
+  exit
+end
+
 CSV.foreach(ARGV[0]) { |raw|
   comic = ComicList.new(raw[0], raw[1])
 
