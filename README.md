@@ -17,8 +17,8 @@ comic_release.rb
 
 クラス図
 --------
-![class.png][./class.png]
+![class.png](./class.png)
 
 シーケンス図
 ------------
-![sequence.png][./sequence.png]
+![sequence.png](./sequence.png)
