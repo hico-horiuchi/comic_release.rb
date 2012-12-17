@@ -16,14 +16,14 @@ end
 CSV.foreach(ARGV[0]) { |raw|
   comic = ComicList.new(raw[0], raw[1])
 
-  print(comic.title.left_justify(30).tosjis)
-
-  printf("%02d", comic.volume)
-  print("巻  ".tosjis)
+  str = comic.title.left_justify(30)
+  str += "%02d" % comic.volume + "巻  "
 
   if comic.is_release_decided
-    print(comic.release_date.strftime("%m/%d") + "\n")
+    str += comic.release_date.strftime("%m/%d")
   else
-    puts "未定".tosjis
+    str += "未定"
   end
+
+  puts str.tosjis
 }
