@@ -30,7 +30,7 @@ class ComicList < Comic
       f.read =~ /<td class="list-line list-day">(.*?)<\/td>/
       if $1 then # 発売日が決定の場合
         releaseDate = Date.strptime($1, "%m/%d")
-        @flag = "release"
+        @is_release_decided = true
       end
     }
     return releaseDate

@@ -15,12 +15,9 @@ CSV.foreach(ARGV[0]) { |raw|
   printf("%02d", tmpComic.volume)
   print("巻  ".tosjis)
 
-  flag = tmpComic.flag
-  if flag == "release" then
+  if tmpComic.is_release_decided
     print(tmpComic.release_date.strftime("%m/%d") + "\n")
-  elsif flag == "undecide" then
-    puts "未定".tosjis
   else
-    puts "エラー".tosjis
+    puts "未定".tosjis
   end
 }
