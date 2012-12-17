@@ -16,7 +16,7 @@ end
 CSV.foreach(ARGV[0]) { |raw|
   comic = ComicList.new(raw[0], raw[1])
 
-  print(ljust_kana(comic.title, 25).tosjis)
+  print(comic.title.left_justify(30).tosjis)
 
   printf("%02d", comic.volume)
   print("巻  ".tosjis)
