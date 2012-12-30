@@ -9,11 +9,13 @@ comic_release.rb
 
 変数一覧
 --------
-+ `name` : タイトル
-+ `num` : 巻数
-+ `date` : 発売日
-+ `flag` : 発売フラグ(release, undecide, error)
-+ `url` : 検索用URL
++ Comic
+	+ `title` : タイトル
+	+ `volume` : 巻数
+	+ `is_release_decided` : 発売フラグ
++ ComicList
+	+ `url` : 検索用URL
+	+ `release_daye` : 発売日
 
 クラス図
 --------
