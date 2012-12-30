@@ -1,15 +1,10 @@
-+-------------------------+      +--------------------+
-| Comic                   |      | ComicList          |
-+-------------------------+<-----+--------------------+
-| o name; String          |      +--------------------+
-| o num; Integer          |      | o encodeURL()      |
-| o date; Date            |      | o getReleaseDate() |
-| o flag; String          |      +--------------------+
-| o url; String           |
-+-------------------------+
-| o initialize(name, num) |
-| o getName()             |
-| o getNum()              |
-| o getDate()             |
-| o getFlag()             |
-+-------------------------+
++-----------------------------------+      +-------------------------------+
+| Comic                             |      | ComicList                     |
++-----------------------------------+<-----+-------------------------------+
+| o title; String                   |      | o url; String                 |
+| o volume; Integer                 |      | o release_date; Date          |
+| o is_release_decided; Boolean     |      +-------------------------------+
++-----------------------------------+      | o create_encode_url; String   |
+| o attr_reader                     |      | o get_release_date(url); Date |
+| o initialize(title, volume); Void |      +-------------------------------+
++-----------------------------------+
