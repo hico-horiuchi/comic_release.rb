@@ -12,7 +12,7 @@ class Comic
   def initialize(title, volume)
     @title = title
     @volume = volume.to_i
-    @is_release_decided = false # 発売フラグ(release, undecide, error)
+    @is_release_decided = false
 
     # @volumeが整数でない場合
     if @volume == 0 then
