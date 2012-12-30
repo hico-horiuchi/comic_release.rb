@@ -16,7 +16,7 @@ end
 CSV.foreach(ARGV[0]) { |raw|
   comic = ComicList.new(raw[0], raw[1])
 
-  str = comic.title.left_justify(30)
+  str = comic.title.left_justify(35)
   str += "%02d" % comic.volume + "巻  "
 
   if comic.is_release_decided
