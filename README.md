@@ -17,6 +17,12 @@ comic_release.rb
 	+ `url` : 検索用URL
 	+ `release_daye` : 発売日
 
+メソッド一覧
+============
++ ComicList
+	+ `create_encode_url` : titleとvolumeから、UTF-8エンコードで検索用のURLを生成。
+	+ `get_release_date` : URLからHTMLを取得し、正規表現を用いて発売日を取得。
+
 クラス図
 --------
 ![class.png](https://raw.github.com/hico-horiuchi/comic_release.rb/master/class.png)
