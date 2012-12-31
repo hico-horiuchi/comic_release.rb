@@ -6,6 +6,13 @@ require 'csv'
 require 'kconv'
 require './just_kana.rb'
 require './comic_list.rb'
+require 'optparse'
+
+encoding = 'sjis'
+
+opt = OptionParser.new
+opt.on('-u') {|v| encoding = 'utf8' }
+opt.parse!(ARGV)
 
 if ARGV.size < 1
   puts "引数不足"
@@ -25,5 +32,9 @@ CSV.foreach(ARGV[0]) { |raw|
     str += "未定"
   end
 
-  puts str.tosjis
+  if encoding == 'utf8'
+    puts str.toutf8
+  else
+    puts str.tosjis
+  end
 }
