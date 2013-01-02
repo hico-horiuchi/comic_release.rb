@@ -4,8 +4,7 @@ Encoding.default_external = 'UTF-8'
 
 require 'csv'
 require 'kconv'
-require './just_kana.rb'
-require './comic_list.rb'
+require './lib/shelf.rb'
 require 'optparse'
 
 encoding = 'sjis'
@@ -20,21 +19,15 @@ if ARGV.size < 1
   exit
 end
 
-CSV.foreach(ARGV[0]) { |raw|
-  comic = ComicList.new(raw[0], raw[1])
+start = Time.now
 
-  str = comic.title.left_justify(35)
-  str += "%02d" % comic.volume + "巻  "
+shelf = Shelf.new
+shelf.import(ARGV[0])
+puts "Getting comics information."
+shelf.resolv_books_attributes
+shelf.each do |comic|
+  puts comic.to_s.toutf8
+end
 
-  if comic.is_release_decided
-    str += comic.release_date.strftime("%m/%d")
-  else
-    str += "未定"
-  end
-
-  if encoding == 'utf8'
-    puts str.toutf8
-  else
-    puts str.tosjis
-  end
-}
+finish = Time.now
+puts "Exection time: "(finish - Start) + "s"
