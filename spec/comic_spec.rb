@@ -8,7 +8,6 @@ describe Comic do
   end
 
   describe ".to_s" do
-    
     it "is_release_decidedがFalseの際、値が想定通りであること" do
       @comic.to_s.should eql 'TestTitle                          01巻  未定'
     end

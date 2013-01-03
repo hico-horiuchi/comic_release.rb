@@ -2,7 +2,7 @@
 
 Encoding.default_external = 'UTF-8'
 
-require './comic.rb'
+require File.join(File.dirname(__FILE__), 'comic.rb')
 
 class Shelf
   include Enumerable

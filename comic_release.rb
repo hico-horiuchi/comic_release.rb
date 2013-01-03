@@ -30,4 +30,4 @@ shelf.each do |comic|
 end
 
 finish = Time.now
-puts "Exection time: "(finish - Start) + "s"
+puts "Exection time: " + (finish - start).to_s + "s"
