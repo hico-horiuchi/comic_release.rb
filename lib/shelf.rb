@@ -2,8 +2,6 @@
 
 Encoding.default_external = 'UTF-8'
 
-require 'cgi'
-require 'open-uri'
 require './comic.rb'
 
 class Shelf

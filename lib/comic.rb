@@ -4,7 +4,10 @@ Encoding.default_external = 'UTF-8'
 
 require 'date'
 require 'kconv'
-require './just_kana.rb'
+require 'cgi'
+require 'open-uri'
+
+require File.join(File.dirname(__FILE__), './just_kana.rb')
 
 class Comic
   attr_reader :title, :volume, :release_date, :is_release_decided
