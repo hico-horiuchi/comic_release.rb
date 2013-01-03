@@ -30,9 +30,9 @@ class Shelf
   end
 
   #TODO ここの処理が遅いので並列処理を検討すべき
-  def resolv_books_attributes
+  def resolve_books_attributes
     @comics.each do |comic|
-      comic.resolv_release_date!
+      comic.resolve_release_date!
     end
   end
 end

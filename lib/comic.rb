@@ -26,7 +26,7 @@ class Comic
 
   #FIXME 情報の取得をこのクラス内でやってしまうのは違和感があるので、
   #規模が大きくなってきたら分離すべき
-  def resolv_release_date!
+  def resolve_release_date!
     @release_date = Date::today
     open(encorded_url) do |f|
       f.read =~ /<td class="list-line list-day">(.*?)<\/td>/

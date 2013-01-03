@@ -24,7 +24,7 @@ start = Time.now
 shelf = Shelf.new
 shelf.import(ARGV[0])
 puts "Getting comics information."
-shelf.resolv_books_attributes
+shelf.resolve_books_attributes
 shelf.each do |comic|
   puts comic.to_s.toutf8
 end
