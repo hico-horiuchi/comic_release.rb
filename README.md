@@ -11,7 +11,7 @@ comic_release.rb
 起動方法
 --------
 	> ruby comic_release.rb list.csv
-	
+
 ユニットテスト
 --------
 	> rake spec
@@ -37,11 +37,3 @@ comic_release.rb
 	+ `add` : Comicインスタンスを作成し、comics配列へ収納
 	+ `each` : comics配列の中身を一つづつ返す。
 	+ `resolve_books_attributes` : comics配列に収納されているcomicインスタンスすべてにresolv_release_date!メソッドを実行。
-	
-クラス図
---------
-![class.png](https://raw.github.com/hico-horiuchi/comic_release.rb/master/class.png)
-
-シーケンス図
-------------
-![sequence.png](https://raw.github.com/hico-horiuchi/comic_release.rb/master/sequence.png)
