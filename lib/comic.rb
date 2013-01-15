@@ -18,9 +18,9 @@ class Comic
     @volume = volume.to_i
     @is_release_decided = false
 
-    # @volumeが整数でない場合
-    if @volume == 0 then
-      raise "volume が整数ではない"
+    # @volumeが不正な値
+    if @volume <= 0 then
+      raise "volume が不正な値"
     end
   end
 
