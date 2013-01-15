@@ -3,6 +3,7 @@
 Encoding.default_external = 'UTF-8'
 
 require File.join(File.dirname(__FILE__), 'comic.rb')
+require File.join(File.dirname(__FILE__), 'thread_pool.rb')
 
 class Shelf
   include Enumerable
@@ -29,10 +30,13 @@ class Shelf
     end
   end
 
-  #TODO ここの処理が遅いので並列処理を検討すべき
   def resolve_books_attributes
+    thread_pool =  ThreadPool.new(10)
     @comics.each do |comic|
-      comic.resolve_release_date!
+      thread_pool.run do
+        comic.resolve_release_date!
+      end
     end
+    thread_pool.join
   end
 end
