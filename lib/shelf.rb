@@ -19,11 +19,6 @@ class Shelf
     end
   end
 
-  def add(title, volume)
-    @comics << Comic.new(title, volume)
-    self
-  end
-
   def each
     @comics.each do |comic|
       yield comic
@@ -38,5 +33,11 @@ class Shelf
       end
     end
     thread_pool.join
+  end
+
+  private
+  def add(title, volume)
+    @comics << Comic.new(title, volume)
+    self
   end
 end
