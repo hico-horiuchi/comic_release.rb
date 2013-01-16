@@ -35,5 +35,5 @@ comic_release.rb
 + Shelf
 	+ `import` : 与えられたパスからCSVを読み込み、行ごとにaddメソッドを実行。
 	+ `add` : Comicインスタンスを作成し、comics配列へ収納
-	+ `each` : comics配列の中身を一つづつ返す。
+	+ `each` : comics配列の中身を一つずつ返す。
 	+ `resolve_books_attributes` : comics配列に収納されているcomicインスタンスすべてにresolv_release_date!メソッドを実行。
