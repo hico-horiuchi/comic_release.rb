@@ -1,39 +1,39 @@
 comic_release.rb
 ================
-ƒRƒ~ƒbƒNVŠ§‚Ì”­”„“ú‚ğ’²‚×‚éRubyƒXƒNƒŠƒvƒg‚Å‚·B
-Œ»İ‚ÍA[comiclist.jp](http://comiclist.jp/)‚©‚çAî•ñ‚ğæ“¾‚µ‚Ä‚¢‚Ü‚·B
+ã‚³ãƒŸãƒƒã‚¯æ–°åˆŠã®ç™ºå£²æ—¥ã‚’èª¿ã¹ã‚‹Rubyã‚¹ã‚¯ãƒªãƒ—ãƒˆã§ã™ã€‚
+ç¾åœ¨ã¯ã€[comiclist.jp](http://comiclist.jp/)ã‹ã‚‰ã€æƒ…å ±ã‚’å–å¾—ã—ã¦ã„ã¾ã™ã€‚
 
-‰‰ñ‹N“®
+åˆå›èµ·å‹•æ™‚
 --------
 	> gem install bundler
 	> bundle install
 
-‹N“®•û–@
+èµ·å‹•æ–¹æ³•
 --------
 	> ruby comic_release.rb list.csv
 
-ƒ†ƒjƒbƒgƒeƒXƒg
+ãƒ¦ãƒ‹ãƒƒãƒˆãƒ†ã‚¹ãƒˆ
 --------
 	> rake spec
 
-•Ï”ˆê——
+å¤‰æ•°ä¸€è¦§
 --------
 + Comic
-	+ `title` : ƒ^ƒCƒgƒ‹
-	+ `volume` : Šª”
-	+ `release_date` : ”­”„“ú
-	+ `is_release_decided` : ”­”„ƒtƒ‰ƒO
+	+ `title` : ã‚¿ã‚¤ãƒˆãƒ«
+	+ `volume` : å·»æ•°
+	+ `release_date` : ç™ºå£²æ—¥
+	+ `is_release_decided` : ç™ºå£²ãƒ•ãƒ©ã‚°
 + Shelf
-	+ `comics` : ComicƒCƒ“ƒXƒ^ƒ“ƒXû”[”z—ñ
+	+ `comics` : Comicã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åç´é…åˆ—
 
-ƒƒ\ƒbƒhˆê——
+ãƒ¡ã‚½ãƒƒãƒ‰ä¸€è¦§
 ------------
 + Comic
-	+ `encorded_url` : title‚Ævolume‚©‚çAUTF-8ƒGƒ“ƒR[ƒh‚ÅŒŸõ—p‚ÌURL‚ğ¶¬B
-	+ `resolve_release_date!` : URL‚©‚çHTML‚ğæ“¾‚µA³‹K•\Œ»‚ğ—p‚¢‚Ä”­”„“ú‚ğæ“¾B
-	+ `to_s` : o—Í•¶š—ñ‚ğ¶¬
+	+ `encorded_url` : titleã¨volumeã‹ã‚‰ã€UTF-8ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã§æ¤œç´¢ç”¨ã®URLã‚’ç”Ÿæˆã€‚
+	+ `resolve_release_date!` : URLã‹ã‚‰HTMLã‚’å–å¾—ã—ã€æ­£è¦è¡¨ç¾ã‚’ç”¨ã„ã¦ç™ºå£²æ—¥ã‚’å–å¾—ã€‚
+	+ `to_s` : å‡ºåŠ›æ–‡å­—åˆ—ã‚’ç”Ÿæˆ
 + Shelf
-	+ `import` : —^‚¦‚ç‚ê‚½ƒpƒX‚©‚çCSV‚ğ“Ç‚İ‚İAs‚²‚Æ‚Éaddƒƒ\ƒbƒh‚ğÀsB
-	+ `add` : ComicƒCƒ“ƒXƒ^ƒ“ƒX‚ğì¬‚µAcomics”z—ñ‚Öû”[
-	+ `each` : comics”z—ñ‚Ì’†g‚ğˆê‚Â‚¸‚Â•Ô‚·B
-	+ `resolve_books_attributes` : comics”z—ñ‚Éû”[‚³‚ê‚Ä‚¢‚écomicƒCƒ“ƒXƒ^ƒ“ƒX‚·‚×‚Ä‚Éresolv_release_date!ƒƒ\ƒbƒh‚ğÀsB
+	+ `import` : ä¸ãˆã‚‰ã‚ŒãŸãƒ‘ã‚¹ã‹ã‚‰CSVã‚’èª­ã¿è¾¼ã¿ã€è¡Œã”ã¨ã«addãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè¡Œã€‚
+	+ `add` : Comicã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆã—ã€comicsé…åˆ—ã¸åç´
+	+ `each` : comicsé…åˆ—ã®ä¸­èº«ã‚’ä¸€ã¤ãšã¤è¿”ã™ã€‚
+	+ `resolve_books_attributes` : comicsé…åˆ—ã«åç´ã•ã‚Œã¦ã„ã‚‹Comicã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã™ã¹ã¦ã«resolv_release_date!ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè¡Œã€‚
