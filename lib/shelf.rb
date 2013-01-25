@@ -9,6 +9,9 @@ class Shelf
   include Enumerable
   attr_accessor :comics
 
+  # 取得する際のスレッド数
+  THREAD_NUM = 10
+
   # 初期化
   def initialize
     @comics = []  # Comicインスタンス収納配列
@@ -31,7 +34,7 @@ class Shelf
 
   # comics配列に収納されているComicインスタンス全ての発売日を取得
   def resolve_books_attributes
-    thread_pool =  ThreadPool.new(10)  # 10個のスレッドで処理
+    thread_pool =  ThreadPool.new(THREAD_NUM)  # 10個のスレッドで処理
     @comics.each do |comic|            # comics配列の全てについて
       thread_pool.run do               # スレッドを生成して実行
         comic.resolve_release_date!    # 発売日を取得
