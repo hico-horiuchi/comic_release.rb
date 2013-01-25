@@ -38,4 +38,4 @@ end
 
 # 処理時間の計測終了と結果の出力
 finish = Time.now
-puts "Exection time: " + (finish - start).to_s + "s"
+puts "Execution time: " + (finish - start).to_s + "s"
