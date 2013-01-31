@@ -42,7 +42,7 @@ class Comic
 
   # 出力する文字列の生成
   def to_s
-    str = @title.left_justify(35)             # タイトル(35文字左詰め)
+    str = @title.left_justify(45)             # タイトル(35文字左詰め)
     str += "%02d" % @volume + "巻  "          # 巻数(0付き2桁)
     if @is_release_decided                    # 発売決定の場合
       str += @release_date.strftime("%m/%d")  # 発売日(月/日)
