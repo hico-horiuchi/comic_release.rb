@@ -13,12 +13,12 @@ describe Shelf do
     end
 
     it "comicインスタンスが3つあること" do
-      @shelf.comics.length.should == 3
+      expect(@shelf.comics.length).to eq(3)
     end
 
     it "インスタンスの1つめが想定した値をもっていること" do
-      @shelf.comics[0].title.should == "テスト書籍"
-      @shelf.comics[0].volume == 1
+      expect(@shelf.comics[0].title).to eq("テスト書籍")
+      expect(@shelf.comics[0].volume).to eq(1)
     end
   end
 
@@ -28,11 +28,11 @@ describe Shelf do
     end
     
     it "comicsの数が1つになっていること" do
-      @shelf.comics.length.should == 1
+      expect(@shelf.comics.length).to eq(1)
     end
 
     it "正しい値が追加されること" do
-      @shelf.comics[0].title.should == "COMIC"
+      expect(@shelf.comics[0].title).to eq("COMIC")
     end
   end
 
@@ -46,9 +46,10 @@ describe Shelf do
       expected = ["テスト書籍", "テストテスト書籍", "テストテストテスト書籍"]
       count = 0
       @shelf.each do |comic|
-        comic.title.should == expected[count]
+        expect(comic.title).to eq(expected[count])
         count = count + 1
       end
+      expect(count).to eq(3)
     end
   end
 end
