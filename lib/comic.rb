@@ -2,10 +2,12 @@
 
 Encoding.default_external = 'UTF-8'
 
+require 'bundler/setup'
 require 'date'
 require 'kconv'
 require 'cgi'
 require 'open-uri'
+require 'nokogiri'
 
 require File.join(File.dirname(__FILE__), './just_kana.rb')
 
@@ -27,17 +29,13 @@ class Comic
   # FIXME 情報の取得をこのクラス内でやってしまうのは違和感があるので、
   # 規模が大きくなってきたら分離すべき
   def resolve_release_date!
-    @release_date = Date::today  # 発売日を今日の日付で初期化
-    # 検索用ウェブページを開く
-    open(encorded_url) do |f|
-      # 正規表現で発売日を抽出
-      f.read =~ /<td class="list-line list-day">(.*?)<\/td>/
-      # 発売日が抽出できた場合
-      if $1 then
-        @release_date = Date.strptime($1, "%m/%d")  # 発売日を格納
-        @is_release_decided = true                  # 発売フラグ更新
-      end
-    end
+    @release_date = nil  # 発売日をnilで初期化
+    # 検索用ウェブページを開いて発売日を抽出
+    html = Nokogiri::HTML(open(encode_url))
+    # 発売日を格納
+    @release_date = Date.strptime(html.css('td.list-line.list-day').first.text, "%m/%d")
+    # 発売フラグ更新
+    @is_release_decided = true if @release_date != nil
   end
 
   # 出力する文字列の生成
@@ -54,7 +52,7 @@ class Comic
 
   # 検索用ウェブページのURLを生成
   private
-  def encorded_url
+  def encode_url
     # comiclist.jpで検索
     return 'http://comiclist.jp/index.php?p=s&mode=ss&keyword=' + CGI.escape(@title.toutf8) + '+' + @volume.to_s
   end

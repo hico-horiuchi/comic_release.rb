@@ -6,7 +6,7 @@ comic_release.rb
 初回起動時
 --------
 	> gem install bundler
-	> bundle install
+	> bundle install --path=vendor/bundle
 
 起動方法
 --------
