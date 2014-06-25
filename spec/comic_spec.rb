@@ -21,7 +21,7 @@ describe Comic do
 
   describe ".encorded_url" do
     it "encorded_urlの値が想定通りであること" do
-      expect(@comic.send(:encorded_url)).to eq("http://comiclist.jp/index.php?p=s&mode=ss&keyword=TestTitle+1")
+      expect(@comic.send(:encode_url)).to eq("http://comiclist.jp/index.php?p=s&mode=ss&keyword=TestTitle+1")
     end
   end
 end
