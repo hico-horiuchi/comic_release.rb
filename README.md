@@ -1,5 +1,7 @@
 comic_release.rb
 ================
+[![Build Status](https://travis-ci.org/hico-horiuchi/comic_release.rb.svg?branch=master)](https://travis-ci.org/hico-horiuchi/comic_release.rb)
+
 コミック新刊の発売日を調べるRubyスクリプトです。
 現在は、[comiclist.jp](http://comiclist.jp/)から、情報を取得しています。
 
